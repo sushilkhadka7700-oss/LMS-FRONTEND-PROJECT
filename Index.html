@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="LearnHub - Learn new skills online with expert-led courses in web development, design, data science and more." />
+    <title>LearnHub - Online Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    
+    
+    <!-- NAVBAR -->
+
+    <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+            <div class="logo-icon" aria-hidden="true">🎓</div>
+            <span class="logo-text">Learn<span>Hub</span></span>
+          </a>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="contact.html" class="nav-link">About & Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+          </div>
+
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+      
+           <!-- HERO -->
+      
+      <section class="hero" aria-labelledby="heroHeading">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-content">
+              <div class="hero-badge" aria-label="Platform highlight">
+                  &nbsp;#1 Online Learning Platform
+              </div>
+
+              <h1 class="hero-title" id="heroHeading">
+                Learn Skills That
+                <span class="highlight">Shape Your Future</span>
+              </h1>
+
+              <p class="hero-desc">
+                Gain in-demand skills from industry experts. Access 500+ courses
+                in web development, design, data science, and more - learn at
+                your own pace.
+              </p>
+
+              <div class="hero-buttons">
+                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                <a href="contact.html" class="btn btn-outline">Learn More</a>
+              </div>
+
+              <div class="hero-stats" role="list" aria-label="Platform statistics">
+                <div class="stat-item" role="listitem">
+                  <div class="stat-number">500+</div>
+                  <div class="stat-label">Courses</div>
+                </div>
+                <div class="stat-item" role="listitem">
+                  <div class="stat-number">25K+</div>
+                  <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item" role="listitem">
+                  <div class="stat-number">120+</div>
+                  <div class="stat-label">Instructors</div>
+                </div>
+                <div class="stat-item" role="listitem">
+                  <div class="stat-number">4.8★</div>
+                  <div class="stat-label">Avg Rating</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-card">
+                <div class="hero-card-header">
+                  <h3>Your Learning Dashboard</h3>
+                  <p>3 courses in progress</p>
+                </div>
+                <div class="hero-card-body">
+                  <div class="progress-item">
+                    <div class="progress-label">
+                      <span>HTML & CSS Mastery</span>
+                      <span>78%</span>
+                    </div>
+                    <div class="progress-track">
+                      <div class="progress-fill" data-width="78" style="width:0"></div>
+                    </div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-label">
+                      <span>JavaScript Fundamentals</span>
+                      <span>55%</span>
+                    </div>
+                    <div class="progress-track">
+                      <div class="progress-fill" data-width="55" style="width:0"></div>
+                    </div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-label">
+                      <span>Python for Beginners</span>
+                      <span>32%</span>
+                    </div>
+                    <div class="progress-track">
+                      <div class="progress-fill" data-width="32" style="width:0"></div>
+                    </div>
+                  </div>
+
+                  <div class="mini-course-list">
+                    <div class="mini-course">
+                      <div class="mini-icon" style="background:#ede9fe;">💻</div>
+                      <div class="mini-course-info">
+                        <strong>React Basics</strong>
+                        <span>Completed</span>
+                      </div>
+                      <span class="mini-check">✓</span>
+                    </div>
+                    <div class="mini-course">
+                      <div class="mini-icon" style="background:#d1fae5;">📊</div>
+                      <div class="mini-course-info">
+                        <strong>Data Analysis</strong>
+                        <span>Completed</span>
+                      </div>
+                      <span class="mini-check">✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+           <!-- FEATURED COURSES -->
+     
+      <section class="section" aria-labelledby="featuredHeading">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="featuredHeading">Featured Courses</h2>
+            <p class="section-subtitle">Handpicked courses to kickstart your learning journey</p>
+          </div>
+
+          <div class="courses-grid">
+
+            <article class="course-card" tabindex="0" aria-label="HTML and CSS Mastery course">
+              <div class="course-thumb">
+                <img src="images/HTML %26 CSS Mastery.jpg" alt="HTML and CSS Mastery course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Web Development</div>
+                <h3 class="course-title">HTML & CSS Mastery</h3>
+                <p class="course-instructor">by Sarah Johnson</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.9 stars">★★★★★</span>
+                    <span>4.9 (342)</span>
+                  </div>
+                  <span class="course-price free">Free</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="course-card" tabindex="0" aria-label="JavaScript Fundamentals course">
+              <div class="course-thumb">
+                <img src="images/JavaScript Fundamentals.png" alt="JavaScript Fundamentals course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Programming</div>
+                <h3 class="course-title">JavaScript Fundamentals</h3>
+                <p class="course-instructor">by Alex Chen</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.8 stars">★★★★★</span>
+                    <span>4.8 (519)</span>
+                  </div>
+                  <span class="course-price">$29</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="course-card" tabindex="0" aria-label="UI and UX Design Fundamentals course">
+              <div class="course-thumb">
+                <img src="images/UX Design Fundamentals.jpeg" alt="UI and UX Design Fundamentals course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Design</div>
+                <h3 class="course-title">UI/UX Design Fundamentals</h3>
+                <p class="course-instructor">by Maya Patel</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.7 stars">★★★★☆</span>
+                    <span>4.7 (278)</span>
+                  </div>
+                  <span class="course-price">$39</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div style="text-align:center; margin-top: 40px;">
+            <a href="courses.html" class="btn btn-primary">View All Courses →</a>
+          </div>
+        </div>
+      </section>
+
+      
+           <!-- WHY LEARNHUB -->
+      
+      <section class="section features-dark" aria-labelledby="featuresHeading">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="featuresHeading">Why Choose LearnHub?</h2>
+            <p class="section-subtitle">Everything you need to succeed in your learning journey</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🎓</div>
+              <h3 class="feature-title">Expert Instructors</h3>
+              <p class="feature-desc">Learn from industry professionals with years of real-world experience in their fields.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon" aria-hidden="true">📱</div>
+              <h3 class="feature-title">Learn Anywhere</h3>
+              <p class="feature-desc">Access all courses on any device - desktop, tablet, or mobile - at your own pace.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🏆</div>
+              <h3 class="feature-title">Certificates</h3>
+              <p class="feature-desc">Earn industry-recognised certificates upon completion to boost your career profile.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon" aria-hidden="true">💬</div>
+              <h3 class="feature-title">Community Support</h3>
+              <p class="feature-desc">Join a thriving community of learners. Get answers, share progress, and collaborate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+
+      <section class="section testimonials" aria-labelledby="testimonialsHeading">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="testimonialsHeading">What Our Students Say</h2>
+            <p class="section-subtitle">Real stories from real learners</p>
+          </div>
+
+          <div class="testimonials-grid">
+
+            <blockquote class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">"LearnHub completely changed my career. I went from zero knowledge to landing a frontend developer job in just 6 months!"</p>
+              <footer class="testimonial-author">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);" aria-hidden="true">R</div>
+                <div>
+                  <div class="author-name">Rahul Sharma</div>
+                  <div class="author-role">Frontend Developer, TechCorp</div>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">"The courses are well-structured and the instructors are incredibly knowledgeable. Best investment I've ever made."</p>
+              <footer class="testimonial-author">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #10b981);" aria-hidden="true">A</div>
+                <div>
+                  <div class="author-name">Anita Tamang</div>
+                  <div class="author-role">Data Analyst, FinanceHub</div>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card">
+              <div class="testimonial-stars" aria-label="4 stars">★★★★☆</div>
+              <p class="testimonial-text">"I love how I can learn at my own pace. The community support is amazing - never felt stuck for long."</p>
+              <footer class="testimonial-author">
+                <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);" aria-hidden="true">J</div>
+                <div>
+                  <div class="author-name">James Okonkwo</div>
+                  <div class="author-role">UX Designer, Creative Studio</div>
+                </div>
+              </footer>
+            </blockquote>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CTA BANNER -->
+
+      <section class="section cta-section" aria-labelledby="ctaHeading">
+        <div class="container">
+          <h2 class="section-title" id="ctaHeading">Start Learning Today!</h2>
+          <p class="section-subtitle">Join 25,000+ students already building their future with LearnHub.</p>
+          <a href="courses.html" class="btn btn-white">Browse Free Courses →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+     
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+              <div class="logo-icon" aria-hidden="true">🎓</div>
+              <span class="logo-text" style="color:white;">Learn<span>Hub</span></span>
+            </a>
+            <p>Empowering learners worldwide with quality online education since 2020.</p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Platform</h3>
+            <ul class="footer-links">
+              <li><a href="courses.html">All Courses</a></li>
+              <li><a href="contact.html">Become an Instructor</a></li>
+              <li><a href="index.html">Certificates</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">About Us</a></li>
+              <li><a href="contact.html">Our Team</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">Help Centre</a></li>
+              <li><a href="contact.html">FAQ</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+              <li><a href="index.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 LearnHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
