@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Choose the right LearnHub plan for you. Start free or unlock unlimited learning with Pro." />
+    <title>Pricing - LearnHub</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+            <div class="logo-icon" aria-hidden="true">🎓</div>
+            <span class="logo-text">Learn<span>Hub</span></span>
+          </a>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="contact.html" class="nav-link">About & Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+          </div>
+
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- PAGE HERO -->
+      <section class="page-hero" aria-labelledby="pageTitle">
+        <div class="container">
+          <h1 id="pageTitle">Simple, Transparent Pricing</h1>
+          <p>Start free. Upgrade when you're ready. No hidden fees.</p>
+        </div>
+      </section>
+
+      <!-- PRICING SECTION -->
+      <section class="section" aria-labelledby="pricingHeading">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="pricingHeading">Choose Your Plan</h2>
+            <p class="section-subtitle">Save up to 30% with annual billing</p>
+          </div>
+
+          <!-- Billing Toggle -->
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <span id="monthlyLabel" class="active-label">Monthly</span>
+            <label class="toggle-switch" aria-label="Switch to annual billing">
+              <input type="checkbox" id="billingToggle" />
+              <span class="toggle-track"></span>
+            </label>
+            <span id="annualLabel">Annual <span class="save-badge">Save 30%</span></span>
+          </div>
+
+          <!-- Cards -->
+          <div class="pricing-grid">
+
+            <!-- Free -->
+            <div class="pricing-card">
+              <div class="plan-icon" aria-hidden="true"></div>
+              <div class="plan-name">Free</div>
+              <p class="plan-desc">Perfect for beginners exploring online learning.</p>
+              <div class="plan-price">
+                <div class="price-amount"><sup>$</sup>0</div>
+                <div class="price-period">Forever free</div>
+              </div>
+              <ul class="plan-features" aria-label="Free plan features">
+                <li><span class="feat-check" aria-hidden="true">✓</span> Access to 50+ free courses</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Community forum access</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Course progress tracking</li>
+                <li class="disabled"><span class="feat-cross" aria-hidden="true">✕</span> Certificates of completion</li>
+                <li class="disabled"><span class="feat-cross" aria-hidden="true">✕</span> Offline downloads</li>
+                <li class="disabled"><span class="feat-cross" aria-hidden="true">✕</span> Priority support</li>
+              </ul>
+              <a href="courses.html" class="btn btn-outline">Get Started Free</a>
+            </div>
+
+            <!-- Pro (Popular) -->
+            <div class="pricing-card popular">
+              <div class="popular-badge">Most Popular</div>
+              <div class="plan-icon" aria-hidden="true"></div>
+              <div class="plan-name">Pro</div>
+              <p class="plan-desc">For serious learners who want unlimited access.</p>
+              <div class="plan-price">
+                <div class="price-amount" id="proPrice"><sup>$</sup>19</div>
+                <div class="price-period" id="proPeriod">per month</div>
+              </div>
+              <ul class="plan-features" aria-label="Pro plan features">
+                <li><span class="feat-check" aria-hidden="true">✓</span> Access to all 500+ courses</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Certificates of completion</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Offline downloads</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Priority email support</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> New courses every month</li>
+                <li class="disabled"><span class="feat-cross" aria-hidden="true">✕</span> Team dashboard</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary">Start Pro Plan</a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card">
+              <div class="plan-icon" aria-hidden="true"></div>
+              <div class="plan-name">Enterprise</div>
+              <p class="plan-desc">For teams and organisations training at scale.</p>
+              <div class="plan-price">
+                <div class="price-amount" id="enterprisePrice"><sup>$</sup>49</div>
+                <div class="price-period" id="enterprisePeriod">per month</div>
+              </div>
+              <ul class="plan-features" aria-label="Enterprise plan features">
+                <li><span class="feat-check" aria-hidden="true">✓</span> Everything in Pro</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Team dashboard & analytics</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Custom learning paths</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> Dedicated account manager</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> SSO & admin controls</li>
+                <li><span class="feat-check" aria-hidden="true">✓</span> 24/7 phone support</li>
+              </ul>
+              <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="section faq-section" aria-labelledby="faqHeading">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="faqHeading">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our plans</p>
+          </div>
+
+          <div class="pricing-faq">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I switch plans at any time?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes! You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is there a free trial for Pro?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes! All new Pro accounts come with a 7-day free trial. No credit card required to start.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What payment methods do you accept?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and bank transfers for Enterprise plans.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I cancel my subscription?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Absolutely. You can cancel anytime from your account settings. You'll keep access until the end of your current billing period.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do certificates expire?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  No. Once you earn a certificate, it's yours forever — even if you cancel your subscription.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta-section" aria-labelledby="ctaHeading">
+        <div class="container">
+          <h2 class="section-title" id="ctaHeading">Ready to Start Learning?</h2>
+          <p class="section-subtitle">Join 25,000+ students already building their future with LearnHub.</p>
+          <a href="courses.html" class="btn btn-white">Browse Free Courses →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+              <div class="logo-icon" aria-hidden="true">🎓</div>
+              <span class="logo-text" style="color:white;">Learn<span>Hub</span></span>
+            </a>
+            <p>Empowering learners worldwide with quality online education since 2020.</p>
+          </div>
+          <div>
+            <h3 class="footer-title">Platform</h3>
+            <ul class="footer-links">
+              <li><a href="courses.html">All Courses</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="index.html">Certificates</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">About Us</a></li>
+              <li><a href="contact.html">Our Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">Help Centre</a></li>
+              <li><a href="contact.html">FAQ</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 LearnHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
