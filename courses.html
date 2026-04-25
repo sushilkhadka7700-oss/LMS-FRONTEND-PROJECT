@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Browse 500+ online courses in web development, design, data science, and more on LearnHub." />
+    <title>Courses – LearnHub</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Modal styles */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal-backdrop.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .modal {
+        background: white;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 460px;
+        padding: 32px;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+
+      .modal-backdrop.show .modal {
+        transform: scale(1);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: var(--light-bg);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        color: var(--dark);
+      }
+
+      .modal-close:hover {
+        background: var(--border);
+      }
+
+      .modal-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+
+      .modal h3 {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+
+      .modal p {
+        color: var(--gray);
+        font-size: 14px;
+        margin-bottom: 24px;
+        line-height: 1.6;
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 12px;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+            <div class="logo-icon" aria-hidden="true">🎓</div>
+            <span class="logo-text">Learn<span>Hub</span></span>
+          </a>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="contact.html" class="nav-link">About & Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+          </div>
+
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- PAGE HERO -->
+      <section class="page-hero" aria-labelledby="pageTitle">
+        <div class="container">
+          <h1 id="pageTitle">Explore All Courses</h1>
+          <p>500+ expert-led courses to help you grow your skills and career</p>
+        </div>
+      </section>
+
+      <!-- FILTERS -->
+      <div class="courses-filters" role="search" aria-label="Course search and filters">
+        <div class="container">
+          <div class="filters-inner">
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <label for="courseSearch" class="visually-hidden">Search courses</label>
+              <input
+                type="search"
+                id="courseSearch"
+                placeholder="Search courses or instructors..."
+                aria-label="Search courses"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="filter-tags" role="group" aria-label="Filter by category">
+              <button class="filter-tag active" data-filter="all">All</button>
+              <button class="filter-tag" data-filter="web">Web Dev</button>
+              <button class="filter-tag" data-filter="programming">Programming</button>
+              <button class="filter-tag" data-filter="design">Design</button>
+              <button class="filter-tag" data-filter="data">Data Science</button>
+              <button class="filter-tag" data-filter="mobile">Mobile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COURSES SECTION -->
+      <section class="section" style="padding-top: 40px;" aria-labelledby="coursesListHeading">
+        <div class="container">
+          <p class="results-info" id="resultsCount" aria-live="polite">Showing 8 courses</p>
+
+          <div class="courses-grid" id="coursesGrid">
+
+            <!-- Card 1 -->
+            <article class="course-card" data-category="web" tabindex="0" aria-label="HTML and CSS Mastery course">
+              <div class="course-thumb">
+                <img src="images/HTML %26 CSS Mastery.jpg" alt="HTML and CSS Mastery course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Web Development</div>
+                <h2 class="course-title">HTML & CSS Mastery</h2>
+                <p class="course-instructor">by Sarah Johnson</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                    <span>4.9 (342)</span>
+                  </div>
+                  <span class="course-price free">Free</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="course-card" data-category="programming" tabindex="0" aria-label="JavaScript Fundamentals course">
+              <div class="course-thumb">
+                <img src="images/JavaScript Fundamentals.png" alt="JavaScript Fundamentals course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Programming</div>
+                <h2 class="course-title">JavaScript Fundamentals</h2>
+                <p class="course-instructor">by Alex Chen</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+                    <span>4.8 (519)</span>
+                  </div>
+                  <span class="course-price">$29</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="course-card" data-category="design" tabindex="0" aria-label="UI UX Design Fundamentals course">
+              <div class="course-thumb">
+                <img src="images/UX Design Fundamentals.jpeg" alt="UI and UX Design Fundamentals course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Design</div>
+                <h2 class="course-title">UI/UX Design Fundamentals</h2>
+                <p class="course-instructor">by Maya Patel</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.7 out of 5 stars">★★★★☆</span>
+                    <span>4.7 (278)</span>
+                  </div>
+                  <span class="course-price">$39</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="course-card" data-category="data" tabindex="0" aria-label="Python for Data Science course">
+              <div class="course-thumb">
+                <img src="images/Python_for_Data_Science.png" alt="Python for Data Science course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Data Science</div>
+                <h2 class="course-title">Python for Data Science</h2>
+                <p class="course-instructor">by Dr. Lena Müller</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                    <span>4.9 (631)</span>
+                  </div>
+                  <span class="course-price">$49</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="course-card" data-category="mobile" tabindex="0" aria-label="React Native Mobile Development course">
+              <div class="course-thumb">
+                <img src="images/react-native-for-mobile-app-development-scaled.webp" alt="React Native Mobile Development course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Mobile</div>
+                <h2 class="course-title">React Native Mobile Development</h2>
+                <p class="course-instructor">by David Kim</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.6 out of 5 stars">★★★★☆</span>
+                    <span>4.6 (187)</span>
+                  </div>
+                  <span class="course-price">$59</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="course-card" data-category="web" tabindex="0" aria-label="Node.js and Express Backend Development course">
+              <div class="course-thumb">
+                <img src="images/Node.js %26 Express Backend.jpg" alt="Node.js and Express Backend Development course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Web Development</div>
+                <h2 class="course-title">Node.js & Express Backend</h2>
+                <p class="course-instructor">by Carlos Rivera</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+                    <span>4.8 (412)</span>
+                  </div>
+                  <span class="course-price">$45</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="course-card" data-category="design" tabindex="0" aria-label="Figma for Beginners course">
+              <div class="course-thumb">
+                <img src="images/Figma for Beginners.png" alt="Figma for Beginners course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Design</div>
+                <h2 class="course-title">Figma for Beginners</h2>
+                <p class="course-instructor">by Priya Nair</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.7 out of 5 stars">★★★★☆</span>
+                    <span>4.7 (224)</span>
+                  </div>
+                  <span class="course-price free">Free</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="course-card" data-category="data" tabindex="0" aria-label="Machine Learning Essentials course">
+              <div class="course-thumb">
+                <img src="images/Machine Learning Essentials.jpeg" alt="Machine Learning Essentials course thumbnail" />
+              </div>
+              <div class="course-body">
+                <div class="course-category">Data Science</div>
+                <h2 class="course-title">Machine Learning Essentials</h2>
+                <p class="course-instructor">by Prof. Alan Foster</p>
+                <div class="course-meta">
+                  <div class="course-rating">
+                    <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                    <span>4.9 (892)</span>
+                  </div>
+                  <span class="course-price">$69</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- No Results -->
+          <div class="no-results" id="noResults" role="status" aria-live="polite">
+            <div class="no-results-icon">🔍</div>
+            <h3>No courses found</h3>
+            <p>Try a different search term or category.</p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ENROLL MODAL -->
+    <div
+      class="modal-backdrop"
+      id="enrollModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div id="modalOverlay" style="position:absolute;inset:0;" aria-hidden="true"></div>
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Close enrol dialog">✕</button>
+        <div class="modal-icon" aria-hidden="true">🎉</div>
+        <h3 id="modalTitle">Course Title</h3>
+        <p>You're about to enrol in <strong id="modalCourseTitle"></strong>. Create a free account to track your progress and get your certificate!</p>
+        <div class="modal-actions">
+          <a href="contact.html" class="btn btn-primary" style="flex:1;">Sign Up Free</a>
+          <button class="btn btn-outline" id="modalClose2">Maybe Later</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo" aria-label="LearnHub Home">
+              <div class="logo-icon" aria-hidden="true">🎓</div>
+              <span class="logo-text" style="color:white;">Learn<span>Hub</span></span>
+            </a>
+            <p>Empowering learners worldwide with quality online education since 2020.</p>
+          </div>
+          <div>
+            <h3 class="footer-title">Platform</h3>
+            <ul class="footer-links">
+              <li><a href="courses.html">All Courses</a></li>
+              <li><a href="index.html">Certificates</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">About Us</a></li>
+              <li><a href="contact.html">Our Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+              <li><a href="contact.html">Help Centre</a></li>
+              <li><a href="contact.html">FAQ</a></li>
+              <li><a href="index.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 LearnHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Add enroll buttons to cards after DOM loads
+      document.querySelectorAll('.course-card').forEach(card => {
+        const body = card.querySelector('.course-body');
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-primary enroll-btn';
+        btn.style.cssText = 'width:100%; margin-top:0.85rem;';
+        btn.textContent = 'Enrol Now';
+        btn.setAttribute('aria-label', 'Enrol in ' + card.querySelector('.course-title').textContent);
+        body.appendChild(btn);
+      });
+
+      // Wire up second modal close button
+      document.getElementById('modalClose2')?.addEventListener('click', () => {
+        const modal = document.getElementById('enrollModal');
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    </script>
+  </body>
+</html>
